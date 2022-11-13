@@ -1,12 +1,21 @@
+import javax.sound.sampled.Line;
 import java.io.*;
+import java.util.StringTokenizer;
+
 class Main {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int lines = Integer.parseInt(br.readLine());
+        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+        int lines = Integer.parseInt(st.nextToken());
         int[][] area = new int[lines][lines];
         for(int i=0; i<lines; i++){
-            int arr = Integer.parseInt(br.readLine());
+            st = new StringTokenizer(br.readLine(), " ");
+            for (int j =0; j<lines; j++) {
+                area[i][j] = Integer.parseInt(st.nextToken());
+            }
         }
+
+
         System.out.println(area);
         System.out.println(lines);
     }
